@@ -1,0 +1,11 @@
+# Core Django
+Django==4.2.0
+
+# WSGI server
+gunicorn==20.1.0
+
+# Static files handling
+whitenoise==6.4.0
+
+# Environment variables
+python-decouple==3.8
