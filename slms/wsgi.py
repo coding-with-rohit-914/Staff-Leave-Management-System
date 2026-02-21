@@ -11,9 +11,16 @@ https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
 
 # slms/wsgi.py
 import os
+import sys
+import traceback
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'slms.settings')
 
-# IMPORTANT: Vercel looks for 'app' variable
-app = get_wsgi_application()
+try:
+    app = get_wsgi_application()
+    print("Django application loaded successfully")
+except Exception as e:
+    print(f"Error loading Django application: {e}")
+    traceback.print_exc()
+    raise
