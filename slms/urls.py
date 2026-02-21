@@ -1,11 +1,17 @@
 
 from django.contrib import admin
-from django.urls import path
+
 from django.conf import settings
 from django.conf.urls.static import static
 from .import views, staffviews,adminviews
 
+from django.urls import path, include
+from slmsapp import views
+
 urlpatterns = [
+    path('', include('slmsapp.urls')),
+    path('debug/', views.debug_info),  # Add this for debugging
+
     path('admin/', admin.site.urls),
     path('base/', views.BASE, name='base'),
     #login Path
