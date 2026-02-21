@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "myproject/wsgi.py",
+      "src": "slms/wsgi.py",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
@@ -17,11 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "myproject/wsgi.py"
+      "dest": "slms/wsgi.py"
     }
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "myproject.settings",
-    "VERCEL_ENV": "production"
-  }
+  ]
 }
